@@ -1,5 +1,7 @@
 
+
 import java.util.*;
+//package 30DaysOfCode;
 
 public class day0 {
 	public static void main(String[] args) {
