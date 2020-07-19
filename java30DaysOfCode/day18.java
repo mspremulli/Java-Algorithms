@@ -1,10 +1,12 @@
 package java30DaysOfCode;
 
+import java.io.*;
+import java.util.*;
+
 public class day18 {
 }
 
-import java.io.*;
-        import java.util.*;
+
 
 public class Solution {
     // Write your code here.
