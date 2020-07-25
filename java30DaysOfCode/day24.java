@@ -1,23 +1,22 @@
 package java30DaysOfCode;
-import java.io.*;
 import java.util.*;
-class Node{
+class Node2 {
     int data;
-    Node next;
-    Node(int d){
+    Node2 next;
+    Node2(int d){
         data=d;
         next=null;
     }
 
 }
-class Solution
+class day24
 {
 
-    public static Node removeDuplicates(Node head) {
+    public static Node2 removeDuplicates(Node2 head) {
         //Write your code here
         System.out.print(head.data + " ");
-        Node currentNode = head.next;
-        Node previousNode = head;
+        Node2 currentNode = head.next;
+        Node2 previousNode = head;
         while (currentNode != null){
             if(previousNode.data != currentNode.data){
                 System.out.print(currentNode.data + " ");
@@ -28,16 +27,16 @@ class Solution
         return currentNode;
     }
 
-    public static  Node insert(Node head,int data)
+    public static Node2 insert(Node2 head, int data)
     {
-        Node p=new Node(data);
+        Node2 p=new Node2(data);
         if(head==null)
             head=p;
         else if(head.next==null)
             head.next=p;
         else
         {
-            Node start=head;
+            Node2 start=head;
             while(start.next!=null)
                 start=start.next;
             start.next=p;
@@ -45,9 +44,9 @@ class Solution
         }
         return head;
     }
-    public static void display(Node head)
+    public static void display(Node2 head)
     {
-        Node start=head;
+        Node2 start=head;
         while(start!=null)
         {
             System.out.print(start.data+" ");
@@ -57,7 +56,7 @@ class Solution
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
-        Node head=null;
+        Node2 head=null;
         int T=sc.nextInt();
         while(T-->0){
             int ele=sc.nextInt();

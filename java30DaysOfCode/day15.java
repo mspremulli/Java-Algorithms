@@ -1,5 +1,4 @@
 package java30DaysOfCode;
-import java.io.*;
 import java.util.*;
 
 public class day15 {
@@ -8,7 +7,7 @@ public class day15 {
 
 class Node {
     int data;
-    Node next;
+    Node2 next;
     Node(int d) {
         data = d;
         next = null;
@@ -17,15 +16,15 @@ class Node {
 
 class Solution {
 
-    public static  Node insert(Node head,int data) {
+    public static Node2 insert(Node2 head, int data) {
         //Complete this method
 
         if(head == null){
-            return new Node(data);
+            return new Node2(data);
 
         }
         else if(head.next == null){
-            head.next = new Node(data);
+            head.next = new Node2(data);
             return head;
         }
         else{
@@ -34,8 +33,8 @@ class Solution {
         }
     }
 
-    public static void display(Node head) {
-        Node start = head;
+    public static void display(Node2 head) {
+        Node2 start = head;
         while(start != null) {
             System.out.print(start.data + " ");
             start = start.next;
@@ -44,7 +43,7 @@ class Solution {
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        Node head = null;
+        Node2 head = null;
         int N = sc.nextInt();
 
         while(N-- > 0) {

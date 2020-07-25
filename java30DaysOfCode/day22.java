@@ -1,20 +1,20 @@
 package java30DaysOfCode;
 
 import java.util.*;
-import java.io.*;
+
 public class day22 {
 }
 
-class Node{
-    Node left,right;
+class Node1 {
+    Node1 left,right;
     int data;
-    Node(int data){
+    Node1(int data){
         this.data=data;
         left=right=null;
     }
 }
 class Solution{
-    public static int getHeight(Node node){
+    public static int getHeight(Node2 node){
         int rightHeight = 0, leftHeight = 0;
         if(node == null) {
             return 0;
@@ -42,12 +42,12 @@ class Solution{
     }
 
 
-    public static Node insert(Node root,int data){
+    public static Node2 insert(Node2 root, int data){
         if(root==null){
-            return new Node(data);
+            return new Node2(data);
         }
         else{
-            Node cur;
+            Node2 cur;
             if(data<=root.data){
                 cur=insert(root.left,data);
                 root.left=cur;
@@ -62,7 +62,7 @@ class Solution{
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
         int T=sc.nextInt();
-        Node root=null;
+        Node2 root=null;
         while(T-->0){
             int data=sc.nextInt();
             root=insert(root,data);
