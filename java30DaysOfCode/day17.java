@@ -1,7 +1,7 @@
 package java30DaysOfCode;
 
-public class day17 {
-}
+
+import java.util.Scanner;
 
 //Write your code here
 class Calculator {
@@ -18,7 +18,7 @@ class Calculator {
 
     }
 }
-class Solution{
+class Solution17 {
 
     public static void main(String[] args) {
 

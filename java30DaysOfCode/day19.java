@@ -3,14 +3,11 @@ package java30DaysOfCode;
 import java.io.*;
 import java.util.*;
 
-public class day19 {
-}
-
 
 interface AdvancedArithmetic{
     int divisorSum(int n);
 }
-class Calculator implements AdvancedArithmetic {
+class Calculator19 implements AdvancedArithmetic {
     public int divisorSum(int n) {
         int sum = n;
         for(int i = 1; i < n; i++){
@@ -20,14 +17,14 @@ class Calculator implements AdvancedArithmetic {
     }
 }
 
-class Solution {
+class Solution19 {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         scan.close();
 
-        AdvancedArithmetic myCalculator = new Calculator();
+        AdvancedArithmetic myCalculator = new Calculator19();
         int sum = myCalculator.divisorSum(n);
         System.out.println("I implemented: " + myCalculator.getClass().getInterfaces()[0].getName() );
         System.out.println(sum);

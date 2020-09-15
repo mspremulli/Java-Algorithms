@@ -1,9 +1,6 @@
 package java30DaysOfCode;
 import java.util.*;
 
-public class day13 {
-}
-
 
 abstract class Book {
     String title;
@@ -49,9 +46,8 @@ class MyBook extends Book {
 
     }
 }
-// End class
 
-public class Solution {
+class Solution13 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

@@ -1,10 +1,6 @@
 package java30DaysOfCode;
 import java.util.*;
 
-public class day15 {
-}
-
-
 class Node {
     int data;
     Node2 next;
@@ -14,7 +10,7 @@ class Node {
     }
 }
 
-class Solution {
+class Solution15 {
 
     public static Node2 insert(Node2 head, int data) {
         //Complete this method
@@ -41,7 +37,7 @@ class Solution {
         }
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Node2 head = null;
         int N = sc.nextInt();

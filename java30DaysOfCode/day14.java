@@ -1,37 +1,31 @@
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
-
-
-//package java30DaysOfCode;
-
-//public class day14 {
-//}
-
 
 class Difference {
     public int maximumDifference;
-
+    public int[] elements;
     // Add your code here
     public Difference(int[] elements) {
+
         this.elements = elements;
     }
 
     void computeDifference (){
         int min = 100;
         int max = 0;
-        for(int i = 0; i < elements.length; i++){
-            if(min > elements[i]) {min = elements[i];}
-            if(max < elements[i]) {max = elements[i];}
+        for (int element : elements) {
+            if (min > element) {
+                min = element;
+            }
+            if (max < element) {
+                max = element;
+            }
 
         }
         maximumDifference = max - min;
     }
 } // End of Difference class
 
-public class Solution {
+class Solution14 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

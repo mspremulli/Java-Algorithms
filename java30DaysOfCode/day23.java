@@ -1,48 +1,25 @@
 package java30DaysOfCode;
-
 import java.util.*;
-import java.io.*;
-class Node{
-    Node left,right;
+
+class Node23 {
+    Node23 left, right;
     int data;
-    Node(int data){
-        this.data=data;
-        left=right=null;
+    Node23(int data){
+        this.data = data;
+        left = right = null;
     }
 }
 class day23{
 
-    static void levelOrder(Node root){
-        //Write your code here
+    static void levelOrder(Node23 root){
         System.out.print(root.data + " ");
         printNode(root);
     }
 
-    static void printNode(Node node) {
-        //attempt one, did DFS
-        // if(node != null){
-        //     System.out.print(node.data + " ");
-        // }
+    static void printNode(Node23 node) {
 
-        // if(node.left != null){
-        //      System.out.print(node.left.data + " ");
-        // }
-
-        // if(node.right != null){
-        //     System.out.print(node.right.data + " ");
-        // }
-
-        // if(node.left != null){
-        //     printNode(node.left);
-        // }
-
-        // if(node.right != null){
-        //     printNode(node.right);
-        // }
-
-        //attempt2
-        Node currentNode = node;
-        Queue<Node> queue = new LinkedList();
+        Node23 currentNode = node;
+        LinkedList<Node23> queue = new LinkedList();
         queue.add(currentNode);
 
         while(!queue.isEmpty()){
@@ -63,12 +40,12 @@ class day23{
 
     }
 
-    public static Node insert(Node root,int data){
+    public static Node23 insert(Node23 root, int data){
         if(root==null){
-            return new Node(data);
+            return new Node23(data);
         }
         else{
-            Node cur;
+            Node23 cur;
             if(data<=root.data){
                 cur=insert(root.left,data);
                 root.left=cur;
@@ -80,14 +57,14 @@ class day23{
             return root;
         }
     }
-    public static void main(String args[]){
+    public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         int T=sc.nextInt();
-        Node root=null;
+        Node23 root=null;
         while(T-->0){
             int data=sc.nextInt();
             root=insert(root,data);
         }
-        levelOrder(root);
+        levelOrder(Objects.requireNonNull(root));
     }
 }
