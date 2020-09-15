@@ -1,9 +1,9 @@
 package java30DaysOfCode;
 
-public class day16 {
-}
+import java.util.Scanner;
 
-public class Solution {
+
+class Solution16 {
 
     public static void main(String[] args) throws NumberFormatException {
         Scanner in = new Scanner(System.in);

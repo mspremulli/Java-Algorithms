@@ -1,14 +1,8 @@
 package java30DaysOfCode;
 
-import java.io.*;
 import java.util.*;
 
-public class day18 {
-}
-
-
-
-public class Solution {
+ class Solution18 {
     // Write your code here.
 // Two instance variables: one for your , and one for your .
 // A void pushCharacter(char ch) method that pushes a character onto a stack.
@@ -44,7 +38,7 @@ public class Solution {
         char[] s = input.toCharArray();
 
         // Create a Solution object:
-        Solution p = new Solution();
+        Solution18 p = new Solution18();
 
         // Enqueue/Push all chars to their respective data structures:
         for (char c : s) {
