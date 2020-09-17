@@ -8,7 +8,7 @@ public class playYahtzee {
 
    dice.rollAllDice();
 
-//    dice.addDiceToKeep(keepDice());
+   dice.addDiceToKeep(keepDice());
 //    System.out.println(keepDice());
     dice.printInfo();
 
@@ -21,22 +21,23 @@ public class playYahtzee {
 
     while(again.equals("Y")){
       System.out.println("Do you want to keep any Dice? (Y/N) ");
-      again = scanner.next();
+      again = scanner.next().toUpperCase();
       if(again.equals("Y")) diceKept.add(getDieToKeep());
+//      if(again.equals("Y")) {
+//        System.out.println(getDieToKeep());
+//      }
     }
 
-    scanner.close();
+//    scanner.close();
     return diceKept;
   }
   public static int getDieToKeep(){
     Scanner scanner = new Scanner(System.in);
     System.out.println();
-    System.out.println("What die will you keep? (enter index of die to keep) ");
+    System.out.println("What die will you keep? (enter 1-5 to select die) ");
 
-    int dieToKeep = scanner.nextInt();
+    return scanner.nextInt() - 1;
 
-    scanner.close();
-    return dieToKeep;
   }
 
 }
