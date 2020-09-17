@@ -33,7 +33,10 @@ public class Dice {
 
   public ArrayList<Die> rollDice() {
     rollDice.forEach(Die::rollDie);
+    System.out.println("Rerolled Dice: ");
     printDice(rollDice);
+    System.out.println("Total Dice roll: ");
+    printDice(allDice);
     return rollDice;
   }
 

@@ -12,6 +12,8 @@ public class playYahtzee {
 //    System.out.println(keepDice());
     dice.printInfo();
 
+    dice.rollDice();
+
   }
 
   public static ArrayList<Integer> keepDice(){
@@ -23,12 +25,8 @@ public class playYahtzee {
       System.out.println("Do you want to keep any Dice? (Y/N) ");
       again = scanner.next().toUpperCase();
       if(again.equals("Y")) diceKept.add(getDieToKeep());
-//      if(again.equals("Y")) {
-//        System.out.println(getDieToKeep());
-//      }
     }
 
-//    scanner.close();
     return diceKept;
   }
   public static int getDieToKeep(){
