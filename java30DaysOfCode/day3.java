@@ -10,6 +10,7 @@ public class day3 {
 
 
 
+
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -23,5 +24,6 @@ public class day3 {
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
         scanner.close();
+
     }
 }
