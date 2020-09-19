@@ -14,7 +14,10 @@ public class FrequencyQuery {
 
   // Complete the freqQuery function below.
   static List<Integer> freqQuery(List<List<Integer>> queries) {
-    List frequencyCount = new ArrayList <Integer>();
+//    List frequencyCount = new ArrayList <Integer>();
+    Map frequencyHashmap = new HashMap();
+
+
     List answer = new ArrayList <Integer>();
 
     for(int i = 0; i < queries.size(); i++) {
@@ -23,21 +26,31 @@ public class FrequencyQuery {
 
       switch(first){
         case 1:
-          frequencyCount.add(second);
+//          frequencyCount.add(second);
+            if(frequencyHashmap.containsKey(second)){
+              frequencyHashmap.put(second, frequencyHashmap.get(second));
+            }
+            else{frequencyHashmap.put(second, 1);
+
+          }
           break;
-        // case 2:
-        //     int index = frequencyCount.indexOf(second);
-        //     if(index != - 1) frequencyCount.remove(index);
-        //     break;
-        // case 3:
-        //     answer.add(frequencyCount.contains(second) ? 1 : 0);
-        //     break;
+         case 2:
+
+
+
+//             int index = frequencyCount.indexOf(second);
+//             if(index != - 1) frequencyCount.remove(index);
+             break;
+         case 3:
+//             answer.add(frequencyCount.contains(second) ? 1 : 0);
+               answer.add(frequencyHashmap.containsValue(second) ? 1 : 0);
+             break;
         default:
           break;
       }
     }
 
-    printArrayList(frequencyCount);
+//    printArrayList(frequencyCount);
 
 
     return answer;
@@ -64,7 +77,6 @@ public class FrequencyQuery {
 //    1 6
 //    2 5
 //    3 2
-//    printArrayList(testArray1);
     freqQuery(testArray1);
   }
 
