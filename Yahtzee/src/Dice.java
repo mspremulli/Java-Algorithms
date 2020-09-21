@@ -40,7 +40,6 @@ public class Dice {
     printDice(keptDice);
     System.out.println("dice to reRoll");
     printDice(rollDice);
-    resetRollAndKeep();
   }
 
   private void printDice(ArrayList<Die> dice){
@@ -49,16 +48,17 @@ public class Dice {
   }
 
   //roll methods
-  public ArrayList<Die> rollDice() {
+  public ArrayList<Die> reRollDice() {
     rollDice.forEach(Die::rollDie);
     System.out.println("Rerolled Dice: ");
     printDice(rollDice);
     System.out.println("Total Dice roll: ");
     printDice(allDice);
-    return rollDice;
+    resetRollAndKeep();
+    return allDice;
   }
 
-  public ArrayList<Die> rollAllDice() {
+  public ArrayList<Die> firstRoll() {
     allDice.forEach(Die::rollDie);
     printDice(allDice);
     return allDice;
