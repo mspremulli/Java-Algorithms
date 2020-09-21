@@ -15,15 +15,10 @@ public class Die {
     return value;
   }
 
-  public void setValue(int value) {
-    this.value = value;
-  }
-
   public int rollDie(){
     double random = Math.random();
-    int dieValue = (int) (random * numberOfSides + 1);
-    setValue(dieValue);
-    return dieValue;
+    value = (int) (random * numberOfSides + 1);
+    return value;
   }
 
 
