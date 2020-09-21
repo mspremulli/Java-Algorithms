@@ -3,24 +3,16 @@ import java.util.Scanner;
 
 public class ReadData {
   public static ArrayList<Integer> keepDice(){
-    String keepADie = "Y";
     var diceKept = new ArrayList<Integer>();
     Scanner scanner = new Scanner(System.in);
+    System.out.println("What dice will you keep? (enter numbers 1-5 with space between them to select dice) ");
+    String input = scanner.nextLine();
+    String[] inputList = input.trim().split("\\s+");
 
-    while(keepADie.equals("Y")){
-      System.out.println("Do you want to keep any Dice? (Y/N) ");
-      keepADie = scanner.next().toUpperCase();
-      if(keepADie.equals("Y")) diceKept.add(getDieToKeep());
+    for (String item : inputList) {
+      diceKept.add(Integer.parseInt(item) - 1);
     }
 
     return diceKept;
-  }
-
-  public static int getDieToKeep(){
-    Scanner scanner = new Scanner(System.in);
-    System.out.println();
-    System.out.println("What die will you keep? (enter 1-5 to select die) ");
-
-    return scanner.nextInt() - 1;
   }
 }
