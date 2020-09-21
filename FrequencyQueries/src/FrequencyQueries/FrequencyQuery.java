@@ -3,8 +3,8 @@ import java.util.*;
 public class FrequencyQuery {
 
   static List<Integer> freqQuery(List<List<Integer>> queries) {
-    Map frequencyHashmap = new HashMap();
-    List answer = new ArrayList <Integer>();
+    HashMap<Integer, Integer> frequencyHashmap = new HashMap<>();
+    List<Integer> answer = new ArrayList<>();
 
     for (List<Integer> query : queries) {
       int first = query.get(0);
@@ -13,12 +13,12 @@ public class FrequencyQuery {
       switch (first) {
         case 1: //add the item to the map or increment the count if its there
           if (frequencyHashmap.containsKey(second))
-            frequencyHashmap.put(second, (int) frequencyHashmap.get(second) + 1);
+            frequencyHashmap.put(second, frequencyHashmap.get(second) + 1);
           else frequencyHashmap.put(second, 1);
           break;
         case 2: //if item is in the map, remove 1 from it
-          if (frequencyHashmap.containsKey(second) && (int) frequencyHashmap.get(second) != 0)
-            frequencyHashmap.put(second, (int) frequencyHashmap.get(second) - 1);
+          if (frequencyHashmap.containsKey(second) && frequencyHashmap.get(second) != 0)
+            frequencyHashmap.put(second, frequencyHashmap.get(second) - 1);
           break;
         case 3: //add 1 or 0 to the answer array if the frequency occurs
           answer.add(frequencyHashmap.containsValue(second) ? 1 : 0);
@@ -31,12 +31,10 @@ public class FrequencyQuery {
 //    System.out.println(Collections.singletonList(frequencyHashmap));
     printArrayList(answer);
     return answer;
-
   }
 
-
   public static void main(String[] args) {
-    List testArray1 = new ArrayList();
+    List<List<Integer>> testArray1 = new ArrayList<>();
     testArray1.add( new ArrayList<>(Arrays.asList(1,5)));
     testArray1.add( new ArrayList<>(Arrays.asList(1,6)));
     testArray1.add( new ArrayList<>(Arrays.asList(3,2)));
@@ -54,7 +52,7 @@ public class FrequencyQuery {
     return null;
   }
 
-  public static void printArrayList(List list){
+  public static void printArrayList(List<Integer> list){
     for (Object o : list) {
       System.out.println(o);
     }
