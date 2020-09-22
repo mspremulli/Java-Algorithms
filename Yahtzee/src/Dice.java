@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Dice {
   private static final int numberOfSides = 6;
-  int numberOfDice;
+  private int numberOfDice;
   private ArrayList<Die> allDice;
   private ArrayList<Die> keptDice;
   private ArrayList<Die> rollDice;

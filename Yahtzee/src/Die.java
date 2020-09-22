@@ -1,6 +1,6 @@
 public class Die {
-  int numberOfSides;
-  int value;
+  private int numberOfSides;
+  private int value;
 
   public Die(int numberOfSides) {
     this.numberOfSides = numberOfSides;
@@ -16,8 +16,7 @@ public class Die {
   }
 
   public int rollDie(){
-    double random = Math.random();
-    value = (int) (random * numberOfSides + 1);
+    value = (int) (Math.random() * numberOfSides + 1);
     return value;
   }
 

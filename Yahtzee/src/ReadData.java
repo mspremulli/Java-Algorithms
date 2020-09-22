@@ -11,7 +11,7 @@ public class ReadData {
     String[] inputList = input.trim().split("\\s+");
 
     for (String item : inputList) {
-      if(item.matches("\\D")) {
+      if(item.matches("[1-5]")) {
         diceKept.add(Integer.parseInt(item) - 1);
       }
     }
