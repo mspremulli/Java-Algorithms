@@ -19,6 +19,4 @@ public class Die {
     value = (int) (Math.random() * numberOfSides + 1);
     return value;
   }
-
-
 }
