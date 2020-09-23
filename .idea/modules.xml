@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BitFlipper/BitFlipper.iml" filepath="$PROJECT_DIR$/BitFlipper/BitFlipper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FradulentActivity/FradulentActivity.iml" filepath="$PROJECT_DIR$/FradulentActivity/FradulentActivity.iml" />
       <module fileurl="file://$PROJECT_DIR$/FrequencyQueries/FrequencyQueries.iml" filepath="$PROJECT_DIR$/FrequencyQueries/FrequencyQueries.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java-Algorithms.iml" filepath="$PROJECT_DIR$/Java-Algorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/Yahtzee/Yahtzee.iml" filepath="$PROJECT_DIR$/Yahtzee/Yahtzee.iml" />
