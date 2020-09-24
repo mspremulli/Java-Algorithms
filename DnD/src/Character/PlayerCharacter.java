@@ -1,8 +1,6 @@
 package Character;
 
 public class PlayerCharacter {
-
-
   private Weapon weapon;
   private Armor armor;
 
@@ -31,5 +29,4 @@ public class PlayerCharacter {
   public void setArmor(Armor armor) {
     this.armor = armor;
   }
-
 }
