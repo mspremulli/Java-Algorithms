@@ -1,6 +1,6 @@
 import Character.PlayerCharacter;
 public class Calculator {
-  public static int attack(int d20Roll, int armor, int defenseMod, int attackMod, String damageDice){
+  public static int attack(int d20Roll, int armorClass, int defenseMod, int attackMod, String damageDice){
     int dieRoll = rollDamageDice(damageDice);
     System.out.println(dieRoll + " " + d20Roll);
 
@@ -10,7 +10,7 @@ public class Calculator {
       // do a second roll
       dieRoll += rollDamageDice(damageDice);
       System.out.println("Critical Hit! " + dieRoll + " damage");
-    } else if (d20Roll + attackMod <= defenseMod + armor) {
+    } else if (d20Roll + attackMod <= defenseMod + armorClass) {
       System.out.println("Miss 0 damage");
     } else {
       System.out.println("Hit " + dieRoll + " damage dealt");
@@ -19,12 +19,14 @@ public class Calculator {
     return dieRoll;
   }
 
-  public static int attack(int d20Roll, PlayerCharacter attacker, PlayerCharacter defender, int defenseMod, String damageDice){
-   return attack(d20Roll,
-           defender.getArmor().getArmorValue(),
-           defenseMod,
-           attacker.getWeapon().getAttackValue(),
-           damageDice );
+  public static int attack(int d20Roll, PlayerCharacter attacker, PlayerCharacter defender){
+   return attack(
+           d20Roll,
+           defender.getArmorClass(),
+           defender.getDefenseMod() + defender.getArmor().getArmorMod(),
+           attacker.getAttackMod() + attacker.getWeapon().getAttackMod(),
+           attacker.getWeapon().getDamageDice()
+   );
   }
 
   public static int rollDamageDice(String roll){

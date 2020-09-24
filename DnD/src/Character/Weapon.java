@@ -1,17 +1,19 @@
 package Character;
 
 public class Weapon {
-  private int attackValue;
+  private int attackMod;
+  private String damageDice;
 
-  public Weapon(int attackValue) {
-    this.attackValue = attackValue;
+  public Weapon(int attackValue, String damageDice) {
+    this.attackMod = attackValue;
+    this.damageDice = damageDice;
   }
 
-  public int getAttackValue() {
-    return attackValue;
+  public int getAttackMod() {
+    return attackMod;
   }
 
-  public void setAttackValue(int attackValue) {
-    this.attackValue = attackValue;
+  public String getDamageDice() {
+    return damageDice;
   }
 }

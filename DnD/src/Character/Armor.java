@@ -1,17 +1,13 @@
 package Character;
 
 public class Armor {
-  private int armorValue;
+  private int armorMod;
 
   public Armor(int armorValue) {
-    this.armorValue = armorValue;
+    this.armorMod = armorValue;
   }
 
-  public int getArmorValue() {
-    return armorValue;
-  }
-
-  public void setArmorValue(int armorValue) {
-    this.armorValue = armorValue;
+  public int getArmorMod() {
+    return armorMod;
   }
 }
