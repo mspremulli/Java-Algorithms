@@ -1,11 +1,17 @@
+import Character.PlayerCharacter;
+
 public class PlayDnD {
   public static void main(String[] args){
     Die d20 = new Die(20);
-    
+    PlayerCharacter attacker = new PlayerCharacter();
+    PlayerCharacter defender = new PlayerCharacter();
+
+
+
 //    Calculator.attack(d20.rollDie(),5,1,1,"2d4");
 
-    Calculator.attack(1,5,1,1,"2d4");
-    Calculator.attack(20,5,1,1,"2d4");
+    Calculator.attack(1,defender.getArmor().getArmorValue(),1,attacker.getWeapon().getAttackValue(),"2d4");
+    Calculator.attack(20,5,1,1,"1d8");
     Calculator.attack(8,5,1,1,"2d4");
     Calculator.attack(4,5,1,1,"2d4");
   }
@@ -22,12 +28,12 @@ public class PlayDnD {
 
 breakdown:
 v1.0 can roll a number between 1 and 20
-
 v1.1 can determine if critical hit or miss.
 v1.2 if not above can add attack and defense modifiers to determine hit
 v1.3 parse damage roll into number of standard dice.
 v1.4 parse damage roll into number of specified dice.
 v1.5 determine damage delt.
+
 v1.6 roll damage again if critical hit.
 v1.7 display correct results and return the damage amount.
 

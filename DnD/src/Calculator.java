@@ -9,7 +9,9 @@ public class Calculator {
     if (d20Roll == 1) {
       System.out.println("Critical Miss!");
     } else if (d20Roll == 20) { //change this to number of sides on die
-      System.out.println("Critical Hit! " + 40 + " damage");
+      // do a second roll
+      dieRoll += rollDamageDice(damageDice);
+      System.out.println("Critical Hit! " + dieRoll + " damage");
     } else if (d20Roll + attackMod <= defenseMod + armor) {
       System.out.println("Miss 0 damage");
     } else {
