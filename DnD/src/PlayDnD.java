@@ -1,10 +1,13 @@
 public class PlayDnD {
   public static void main(String[] args){
     Die d20 = new Die(20);
-    for (int i = 0; i < 10 ; i++) {
+    
+//    Calculator.attack(d20.rollDie(),5,1,1,"2d4");
 
-    System.out.println(d20.rollDie());
-    }
+    Calculator.attack(1,5,1,1,"2d4");
+    Calculator.attack(20,5,1,1,"2d4");
+    Calculator.attack(8,5,1,1,"2d4");
+    Calculator.attack(4,5,1,1,"2d4");
   }
 }
 
