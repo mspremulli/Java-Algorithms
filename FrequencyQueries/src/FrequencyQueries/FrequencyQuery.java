@@ -28,7 +28,8 @@ public class FrequencyQuery {
       }
     }
 
-//    System.out.println(Collections.singletonList(frequencyHashmap));
+    System.out.println(Collections.singletonList(frequencyHashmap));
+    System.out.println(frequencyHashmap);
     printArrayList(answer);
     return answer;
   }
