@@ -1,9 +1,15 @@
 public class Die {
-  private int numberOfSides;
+  private final int numberOfSides;
   private int value;
+
+  public Die() {
+    numberOfSides = 6;
+    value = 1;
+  }
 
   public Die(int numberOfSides) {
     this.numberOfSides = numberOfSides;
+    value = 1;
   }
 
   public Die(int numberOfSides, int value) {
