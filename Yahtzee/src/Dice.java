@@ -21,7 +21,6 @@ public class Dice {
     diceToKeep = new ArrayList<>();
   }
 
-  //selecting dice to keep method
   public void addDiceToKeep(ArrayList<Integer> dieNumbers) {
     diceToKeep.addAll(dieNumbers);
     for (int dieNumber = 0; dieNumber < numberOfDice; dieNumber++) {
@@ -43,16 +42,14 @@ public class Dice {
   }
 
   public boolean isYahtzee(){
-    boolean isYahtzee = true;
     int firstDie = allDice.get(0).getValue();
 
-    for (int i = 1; i < numberOfDice ; i++) {
+    for (int i = 1; i < numberOfDice; i++) {
       if(allDice.get(i).getValue() != firstDie) {
-        isYahtzee = false;
-        break;
+        return false;
       }
     }
-    return isYahtzee;
+    return true;
   }
 }
 
