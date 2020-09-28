@@ -1,20 +1,20 @@
 import Character.PlayerCharacter;
 public class Calculator {
+  private static final int CRITICAL_MISS = 1;
+  private static final int CRITICAL_HIT = 20;
+
   public static int attack(int d20Roll, int armorClass, int defenseMod, int attackMod, String damageDice){
     int dieRoll = rollDamageDice(damageDice);
-    System.out.println(dieRoll + " " + d20Roll);
+//    System.out.println(dieRoll + " " + d20Roll);
 
-    if (d20Roll == 1) {
+    if (d20Roll == CRITICAL_MISS) {
       System.out.println("Critical Miss!");
-    } else if (d20Roll == 20) { //change this to number of sides on die
-      // do a second roll
-      dieRoll += rollDamageDice(damageDice);
-      System.out.println("Critical Hit! " + dieRoll + " damage");
+    } else if (d20Roll == CRITICAL_HIT) {
+      int secondDieRoll = rollDamageDice(damageDice);
+      System.out.println("Critical Hit! " + dieRoll + " + " + secondDieRoll + " = " + (dieRoll + secondDieRoll) + " damage");
     } else if (d20Roll + attackMod <= defenseMod + armorClass) {
       System.out.println("Miss 0 damage");
-    } else {
-      System.out.println("Hit " + dieRoll + " damage dealt");
-    }
+    } else System.out.println("Hit " + dieRoll + " damage dealt");
 
     return dieRoll;
   }

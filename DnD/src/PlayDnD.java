@@ -8,6 +8,6 @@ public class PlayDnD {
 
     Calculator.attack(1,defender.getArmor().getArmorMod(),1,attacker.getWeapon().getAttackMod(),"2d4");
     Calculator.attack(d20.rollDie(),attacker,defender);
-
+    Calculator.attack(20,attacker,defender);
   }
 }
