@@ -8,7 +8,6 @@ public class PlayerCharacter {
   private Armor armor;
   private int armorClass;
   private int attackMod;
-
   private int defenseMod;
 
   public PlayerCharacter() {
