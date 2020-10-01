@@ -24,7 +24,6 @@ public class NewYearsChaos {
 
     //if not too chaotic bubble sort twice and count sorts
     bubbleSort(bubbleSort(queue));
-
     System.out.println(countSwaps);
   }
 
@@ -39,5 +38,4 @@ public class NewYearsChaos {
     }
     return queue;
   }
-
 }
