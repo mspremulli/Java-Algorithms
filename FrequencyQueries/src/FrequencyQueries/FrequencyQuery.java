@@ -6,7 +6,7 @@ public class FrequencyQuery {
     HashMap<Integer, Integer> frequencyHashmap = new HashMap<>();
     List<Integer> answer = new ArrayList<>();
 
-    for (List<Integer> query : queries) {
+    for (var query : queries) {
       int first = query.get(0);
       int second = query.get(1);
 
