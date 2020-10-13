@@ -14,19 +14,17 @@ public class PlayYahtzee {
   }
 
   public static void fullTurn(){
-    System.out.println("First Dice roll: ");
-    printDiceRoll(dice.firstRoll());
-    checkIfYahtzee(dice);
-    dice.addDiceToKeep(ReadData.keepDice());
+    oneRoll("First");
+    oneRoll("Second");
+    oneRoll("Final");
+  }
 
-    System.out.println("Second Dice roll: ");
-    printDiceRoll(dice.reRollDice());
+  public static void oneRoll(String whichRoll){
+    System.out.println(whichRoll + " Dice Roll: ");
+    if(whichRoll.equals("First"))  printDiceRoll(dice.firstRoll());
+    else printDiceRoll(dice.reRollDice());
     checkIfYahtzee(dice);
-    dice.addDiceToKeep(ReadData.keepDice());
-
-    System.out.println("Final Dice roll: ");
-    printDiceRoll(dice.reRollDice());
-    checkIfYahtzee(dice);
+    if(!whichRoll.equals("Final")) dice.addDiceToKeep(ReadData.keepDice());
   }
 
   public static void printDiceRoll(ArrayList<Die> diceRoll){
