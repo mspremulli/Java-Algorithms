@@ -30,9 +30,7 @@ public class RansomNote {
     if(containsAllWords) System.out.println("Yes");
   }
 
-
   public static void main(String[] args) {
-
     checkMagazine(
             new String[]{"two", "times", "three", "is", "not", "four"},
             new String[]{"two", "times", "two", "is", "four"}
