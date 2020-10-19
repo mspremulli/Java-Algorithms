@@ -4,10 +4,11 @@ import java.util.Arrays;
 public class HeapsAlgorithm {
   private static void generateHeaps(ArrayList<Integer> list, int movingIndex){
     int size = list.size();
-    for (int i = 0; i < size; i++) {
+    for (int i = size - 1; i >= 0; i--) {
       if(i != movingIndex){
         System.out.println(list.toString());
-        swap(list, movingIndex, 1);
+        swap(list, movingIndex, i);
+//        System.out.println(list.get(i) + " "+ list.get(movingIndex));
       }
     }
     movingIndex++;
@@ -23,6 +24,7 @@ public class HeapsAlgorithm {
 
   public static void main(String[] args){
     generateHeaps(new ArrayList<>(Arrays.asList(1,2,3)), 0);
+    generateHeaps(new ArrayList<>(Arrays.asList(1,2,3,4)), 0);
   }
 }
 // 1 2 3
