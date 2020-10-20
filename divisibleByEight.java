@@ -1,70 +1,37 @@
-
 import java.util.*;
 
+public class divisibleByEight {
 
-  public class divisibleByEight {
+  public static List<String> checkDivisibility(List<String> arr) {
+    ArrayList<String> answerList = new ArrayList<>();
 
-    /*
-     * Complete the 'checkDivisibility' function below.
-     *
-     * The function is expected to return a STRING_ARRAY.
-     * The function accepts STRING_ARRAY arr as parameter.
-     */
+    arr.forEach(originalNumber -> {
+      ArrayList<Integer> numbers = new ArrayList<>();
 
-    //look at all permutations
-
-    //check if any are divisible by 8
-    //add Yes to List if they are
-    //add No to list at the end if none are divisible
-
-    //find all permutations of a number
-    // public static Arraylist<Integer> addPermutations( Arraylist<Integer>numberList, String number){
-    //     if(number.length() > 1){
-
-    //     }
-    //     else{
-    //         numberList.add()
-    //     }
-
-    //     return numberList;
-    // }
-
-
-    public static List<String> checkDivisibility(List<String> arr) {
-      // Write your code here
-      ArrayList<String> answerList = new ArrayList<>();
-      arr.forEach(originalNumber -> {
-        //loop through all permutations
-        ArrayList<Integer> permutationList = new ArrayList<>();
-        // addPermutations(permutationList, originalNumber);
-
-        int count = 1;
-        for (int i = 1; i <= originalNumber.length(); i++) {
-          count = count * i;
-        }
-
-        for (int i = 0; i < count; i++) {
-
-
-
-          if(Integer.parseInt(originalNumber) % 8 == 0) answerList.add("YES");
-          else answerList.add("NO");
-        }
-
-        System.out.println(count);
-      });
-
-      //swaps 2 digits
-      public String swapTwo(String number, int index1, int index2){
-        char temp = number.charAt(index1);
-        number[index1] = number.charAt(index2);
-        number[index2] = temp;
-        return number;
+      for (int i = 0; i < originalNumber.length(); i++) {
+        numbers.add(Integer.parseInt(String.valueOf(originalNumber.charAt(i))));
       }
 
-      return answerList;
-    }
+      HeapsAlgorithm.generateHeaps(numbers, 0);
+//      System.out.println(HeapsAlgorithm.permutationList);
+      String ans = "NO";
 
+      for (int i = 0; i <  HeapsAlgorithm.permutationList.size(); i++) {
+        if(HeapsAlgorithm.permutationList.get(i) % 8 == 0){
+          ans = "YES";
+          break;
+        }
+      }
+      answerList.add(ans);
+      HeapsAlgorithm.permutationList = new ArrayList<>();
+    });
+
+    return answerList;
   }
+
+  public static void main(String[] args){
+    System.out.println(checkDivisibility(new ArrayList<>(Arrays.asList("123", "1234", "13"))));
+  }
+}
 
 
