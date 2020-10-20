@@ -1,12 +1,22 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class HeapsAlgorithm {
-  private static void generateHeaps(ArrayList<Integer> list, int movingIndex){
+
+  public static ArrayList<Integer> permutationList = new ArrayList<>();
+
+  public static void generateHeaps(ArrayList<Integer> list, int movingIndex){
     int size = list.size();
-    for (int i = size - 1; i >= 0; i--) {
+
+    for (int i = 0; i < size; i++) {
       if(i != movingIndex){
-        System.out.println(list.toString());
+
+        AtomicReference<String> ans = new AtomicReference<>("");
+        list.forEach(item -> ans.updateAndGet(v -> v + item));
+        permutationList.add(Integer.parseInt(String.valueOf(ans)));
+//        System.out.println(list + " " + ans);
+
         swap(list, movingIndex, i);
 //        System.out.println(list.get(i) + " "+ list.get(movingIndex));
       }
@@ -24,12 +34,14 @@ public class HeapsAlgorithm {
 
   public static void main(String[] args){
     generateHeaps(new ArrayList<>(Arrays.asList(1,2,3)), 0);
+    System.out.println(permutationList);
     generateHeaps(new ArrayList<>(Arrays.asList(1,2,3,4)), 0);
+    System.out.println(permutationList);
   }
 }
 // 1 2 3
-// 1 3 2
 // 2 1 3
-// 2 3 1
+// 1 3 2
 // 3 1 2
+// 2 3 1
 // 3 2 1
