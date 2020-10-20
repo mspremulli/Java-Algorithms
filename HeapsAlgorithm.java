@@ -23,6 +23,7 @@ public class HeapsAlgorithm {
     }
     movingIndex++;
    if(movingIndex < size) generateHeaps(list, movingIndex);
+
   }
 
   public static ArrayList<Integer> swap(ArrayList<Integer> list, int index1, int index2){
@@ -35,10 +36,15 @@ public class HeapsAlgorithm {
   public static void main(String[] args){
     generateHeaps(new ArrayList<>(Arrays.asList(1,2,3)), 0);
     System.out.println(permutationList);
+    permutationList = new ArrayList<>();
+    generateHeaps(new ArrayList<>(Arrays.asList(1,3,5)), 0);
+    System.out.println(permutationList);
+    permutationList = new ArrayList<>();
     generateHeaps(new ArrayList<>(Arrays.asList(1,2,3,4)), 0);
     System.out.println(permutationList);
   }
 }
+
 // 1 2 3
 // 2 1 3
 // 1 3 2
