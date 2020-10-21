@@ -6,24 +6,28 @@ public class HeapsAlgorithm {
 
   public static ArrayList<Integer> permutationList = new ArrayList<>();
 
-  public static void generateHeaps(ArrayList<Integer> list, int movingIndex){
-    int size = list.size();
-
-    for (int i = 0; i < size; i++) {
-      if(i != movingIndex){
-
+  public static void addToList(ArrayList<Integer> list){
         AtomicReference<String> ans = new AtomicReference<>("");
         list.forEach(item -> ans.updateAndGet(v -> v + item));
         permutationList.add(Integer.parseInt(String.valueOf(ans)));
-//        System.out.println(list + " " + ans);
+  }
 
-        swap(list, movingIndex, i);
-//        System.out.println(list.get(i) + " "+ list.get(movingIndex));
+
+  public static void generateHeaps(ArrayList<Integer> list, int k){
+    if(k == 1) addToList(list);
+    else {
+      generateHeaps(list, k-1);
+
+      for (int i = 0; i < k - 1; i++) {
+
+        if (k % 2 == 0) {
+          swap(list, k - 1, i);
+        } else {
+          swap(list, k - 1, 0);
+        }
+        generateHeaps(list, k-1);
       }
     }
-    movingIndex++;
-   if(movingIndex < size) generateHeaps(list, movingIndex);
-
   }
 
   public static ArrayList<Integer> swap(ArrayList<Integer> list, int index1, int index2){
@@ -34,13 +38,13 @@ public class HeapsAlgorithm {
   }
 
   public static void main(String[] args){
-    generateHeaps(new ArrayList<>(Arrays.asList(1,2,3)), 0);
+    generateHeaps(new ArrayList<>(Arrays.asList(1,2,3)), 3);
     System.out.println(permutationList);
     permutationList = new ArrayList<>();
-    generateHeaps(new ArrayList<>(Arrays.asList(1,3,5)), 0);
+    generateHeaps(new ArrayList<>(Arrays.asList(1,3,5)), 3);
     System.out.println(permutationList);
     permutationList = new ArrayList<>();
-    generateHeaps(new ArrayList<>(Arrays.asList(1,2,3,4)), 0);
+    generateHeaps(new ArrayList<>(Arrays.asList(1,2,3,4)), 4);
     System.out.println(permutationList);
   }
 }
