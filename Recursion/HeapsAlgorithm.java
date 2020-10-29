@@ -6,12 +6,12 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class HeapsAlgorithm {
 
-  public static ArrayList<Integer> permutationList = new ArrayList<>();
+  public static ArrayList<Double> permutationList = new ArrayList<>();
 
   public static void addToList(ArrayList<Integer> list){
         AtomicReference<String> ans = new AtomicReference<>("");
         list.forEach(item -> ans.updateAndGet(v -> v + item));
-        permutationList.add(Integer.parseInt(String.valueOf(ans)));
+        permutationList.add(Double.parseDouble(String.valueOf(ans)));
   }
 
 

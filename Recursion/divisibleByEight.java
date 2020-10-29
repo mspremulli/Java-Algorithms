@@ -34,7 +34,8 @@ public class divisibleByEight {
   }
 
   public static void main(String[] args){
-    System.out.println(checkDivisibility(new ArrayList<>(Arrays.asList("123", "1234", "13"))));
+//    System.out.println(checkDivisibility(new ArrayList<>(Arrays.asList("123", "1234", "13"))));
+    System.out.println(checkDivisibility(new ArrayList<>(Arrays.asList("41", "2729898085", "36470692"))));
   }
 }
 
