@@ -3,30 +3,19 @@ package ArraysAndMaps;
 public class BalancedBrackets {
 
   static String isBalanced(String s) {
-    int length = s.length();
-    if(length % 2 != 0) return "NO";
 
-    String[] brackets = s.split("");
-    String isItBalanced = "YES";
+    String oldS = "";
+    while(s.length() > 1 && !oldS.equals(s)){
+      oldS = s;
+      s = s.replaceAll("\\(\\)", "");
+      s = s.replaceAll("\\{}", "");
+      s = s.replaceAll("\\[]", "");
 
-    for(int i = 0; i < length/2; i++){
-      switch (brackets[i]){
-        case "{":
-          if(!brackets[length - i - 1].equals("}")) return "NO";
-          break;
-        case "[":
-          if(!brackets[length - i - 1].equals("]")) return "NO";
-          break;
-        case "(":
-          if(!brackets[length - i - 1].equals(")")) return "NO";
-          break;
-        default:
-          return "NO";
-
-      }
     }
+//    System.out.println(s);
+    if(s.length() == 0) return "YES";
+    return "NO";
 
-    return isItBalanced;
   }
 
   public static void main(String[] args){
