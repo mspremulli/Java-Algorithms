@@ -2,7 +2,8 @@ package Recursion;
 
 import java.util.*;
 
-public class divisibleByEight {
+public class divisibleByNumber {
+  static final int divisibleBy = 8;
 
   public static List<String> checkDivisibility(List<String> arr) {
     ArrayList<String> answerList = new ArrayList<>();
@@ -20,7 +21,7 @@ public class divisibleByEight {
       String ans = "NO";
 //
       for (int i = 0; i <  HeapsAlgorithm.permutationList.size(); i++) {
-        if(HeapsAlgorithm.permutationList.get(i) % 8 == 0){
+        if(HeapsAlgorithm.permutationList.get(i) % divisibleBy == 0){
 //          System.out.println(Recursion.HeapsAlgorithm.permutationList.get(i));
           ans = "YES";
           break;
