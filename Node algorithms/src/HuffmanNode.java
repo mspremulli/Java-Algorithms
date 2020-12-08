@@ -39,30 +39,28 @@ class Decoding {
 
 
   void decode(String s, Node root) {
-
     Node currentNode = root;
+
     for(String number : s.split("")){
-      if(number.equals("0")) {
-        if(currentNode.left != null) {
+      switch(number){
+        case "0":
+          if(currentNode.left == null){
+            System.out.print(currentNode.data);
+            currentNode = root;
+          }
           currentNode = currentNode.left;
-        }
-        else {
-          System.out.print(currentNode.data);
-          currentNode = root.left;
-        }
-      }
-      else {
-        if(currentNode.right != null) {
+          break;
+
+        case "1":
+          if(currentNode.right == null){
+            System.out.print(currentNode.data);
+            currentNode = root;
+          }
           currentNode = currentNode.right;
-        }
-        else {
-          System.out.print(currentNode.data);
-          currentNode = root.right;
-        }
+          break;
       }
     }
-    System.out.print(currentNode.data);
-
+    System.out.println(currentNode.data);
   }
 }
 
