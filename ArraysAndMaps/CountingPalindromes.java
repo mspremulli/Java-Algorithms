@@ -6,9 +6,11 @@ public class CountingPalindromes {
     int length = s.length();
     int counter = length;
 
+    //todo change to multitheading
     for (int i = 0; i < length; i++) {
       for (int j = i; j < length - 1; j++) {
         if(isPalindrome(s.substring(i,length - j + i))) counter++;
+//        System.out.println(s.substring(i,length - j + i));
       }
     }
 

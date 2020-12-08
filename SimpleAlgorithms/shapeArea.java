@@ -1,7 +1,7 @@
 package SimpleAlgorithms;
 
 public class shapeArea {
-  public static int shapeAreas(int n) {
+  public static int shapeArea(int n) {
     /*
     1   1   1
     2   5   3
@@ -20,7 +20,7 @@ public class shapeArea {
 
   public static void main(String[] args){
     for (int i = 1; i < 6; i++) {
-      System.out.println(shapeAreas(i));
+      System.out.println(shapeArea(i));
     }
   }
 }
