@@ -24,7 +24,7 @@ public class NearestClone {
    *
    */
 
-  static int findShortest(int graphNodes,
+  static int findShortest(int numOfNodes,
                           int[] graphFrom,
                           int[] graphTo,
                           long[] ids,
@@ -33,6 +33,10 @@ public class NearestClone {
     ArrayList<GraphNode> Nodes = new ArrayList<>();
     for (var id:ids ) {
       Nodes.add(new GraphNode(id));
+    }
+
+    for (int i = 0; i < numOfNodes; i++) {
+
     }
 
 
