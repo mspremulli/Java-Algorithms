@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class Solution {
+class Solution {
 
   static class DoublyLinkedListNode {
     public int data;

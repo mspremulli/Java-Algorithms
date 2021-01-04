@@ -11,7 +11,6 @@ public class PermMissingElem {
       if(i+1 != A[i]) return i+1;
     }
 
-    // write your code in Java SE 8
     return len + 1;
   }
 
