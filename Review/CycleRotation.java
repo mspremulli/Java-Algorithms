@@ -6,6 +6,7 @@ public class CycleRotation {
   public static int[] solution(int[] a, int k) {
     int[] rotated = new int[a.length];
     int len = a.length;
+    if(len < 1) return a;
     int newK = k % a.length;
 
     for (int i = 0; i < len; i++) {
