@@ -6,11 +6,13 @@ public class DominatorCoding {
   public static int solution(int[] A) {
     HashMap<Integer, Integer> freqCounter = new HashMap<>();
     int half = (int) (Math.floor(A.length / 2));
+    int i = 0;
     for (int num : A ) {
       if(freqCounter.containsKey(num)) freqCounter.put(num, freqCounter.get(num) + 1);
       else freqCounter.put(num, 1);
 
-      if(freqCounter.get(num) > half) return num;
+      if(freqCounter.get(num) > half) return i;
+      i++;
     }
     return -1;
   }
