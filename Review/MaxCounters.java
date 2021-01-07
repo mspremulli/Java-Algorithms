@@ -8,21 +8,19 @@ public class MaxCounters {
     int maxCounter = 0;
 
     for (int num : A) {
-      if(num < N) {
+      if(num <= N) {
         counters[num - 1]++;
         if(counters[num - 1] > maxCounter) maxCounter = counters[num - 1];
       }
       else {
-        for (int i = 0; i < N; i++) {
-          counters[i] = maxCounter;
-        }
+        Arrays.fill(counters,maxCounter);
       }
-
     }
     return counters;
   }
 
   public static void main(String[] args) {
-    System.out.println(Arrays.toString(solution(0, new int[]{3,4,4,6,1,4,4})));
+    System.out.println(Arrays.toString(solution(5, new int[]{3,4,4,6,1,4,4})));
+    System.out.println(Arrays.toString(solution(1, new int[]{1,1,1,1,2})));
   }
 }
