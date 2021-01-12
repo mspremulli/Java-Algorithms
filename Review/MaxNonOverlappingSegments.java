@@ -3,7 +3,7 @@ package Review;
 public class MaxNonOverlappingSegments {
   public static int solution(int[] A, int[] B) {
     int maxSet = 0;
-    int previousEnd = 0;
+    int previousEnd = -1;
     for (int i = 0; i < A.length; i++) {
       if(A[i] > previousEnd){
         previousEnd = B[i];
