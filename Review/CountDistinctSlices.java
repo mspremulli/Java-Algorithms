@@ -8,7 +8,7 @@ public class CountDistinctSlices {
     HashSet<Integer> currentSlices = new HashSet<>();
 
     for (int num : A) {
-      if(currentSlices.contains(num)){
+      if(currentSlices.contains(num) && currentSlices.size() <= M){
         distinctSlices += AdditiveFactorial(currentSlices.size());
         currentSlices.clear();
       }
@@ -18,7 +18,7 @@ public class CountDistinctSlices {
   }
 
   public static int AdditiveFactorial(int num){
-    return (int) ((num + 1) * (double)(num / 2.0));
+    return (int) ((num + 1) * (num / 2.0));
   }
 
   public static void main(String[] args) {
