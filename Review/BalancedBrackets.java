@@ -17,22 +17,22 @@ public class BalancedBrackets {
 //    if(s.length() == 0) return "YES";
 //    return "NO";
     if(s.equals("")) return 1;
-    Stack<String> stack = new Stack<>();
-    for (String bracket: s.split("") ) {
+    Stack<Character> stack = new Stack<>();
+    for (Character bracket: s.toCharArray()) {
       switch (bracket){
-        case "[":
-        case "{":
-        case "(":
-          stack.add(bracket);
+        case '[':
+        case '{':
+        case '(':
+          stack.push(bracket);
           break;
-        case "]":
-          if(stack.isEmpty() || !stack.pop().equals("[")) return 0;
+        case ']':
+          if(stack.isEmpty() || stack.pop() != '[') return 0;
           break;
-        case "}":
-          if(stack.isEmpty() || !stack.pop().equals("{")) return 0;
+        case '}':
+          if(stack.isEmpty() || stack.pop() != '{') return 0;
           break;
-        case ")":
-          if(stack.isEmpty() || !stack.pop().equals("(")) return 0;
+        case ')':
+          if(stack.isEmpty() || stack.pop() != '(') return 0;
           break;
 
         default:
