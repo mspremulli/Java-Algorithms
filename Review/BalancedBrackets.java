@@ -16,7 +16,7 @@ public class BalancedBrackets {
 //    }
 //    if(s.length() == 0) return "YES";
 //    return "NO";
-
+    if(s.equals("")) return 1;
     Stack<String> stack = new Stack<>();
     for (String bracket: s.split("") ) {
       switch (bracket){
@@ -26,20 +26,21 @@ public class BalancedBrackets {
           stack.add(bracket);
           break;
         case "]":
-          if(!stack.pop().equals("[")) return 0;
+          if(stack.isEmpty() || !stack.pop().equals("[")) return 0;
           break;
         case "}":
-          if(!stack.pop().equals("{")) return 0;
+          if(stack.isEmpty() || !stack.pop().equals("{")) return 0;
           break;
         case ")":
-          if(!stack.pop().equals("(")) return 0;
+          if(stack.isEmpty() || !stack.pop().equals("(")) return 0;
           break;
 
         default:
           return 0;
       }
     }
-    return 1;
+    if(stack.isEmpty()) return 1;
+    return 0;
   }
 
   public static void main(String[] args){
