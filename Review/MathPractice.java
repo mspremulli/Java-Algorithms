@@ -14,6 +14,21 @@ public class MathPractice {
     return Integer.parseInt(num);
   }
 
+  int candies(int n, int m) {
+    return n * (m/n);
+  }
+
+  int seatsInTheater(int nCols, int nRows, int col, int row) {
+    return (1 + nCols-col) * (nRows-row);
+
+  }
+
+  int maxMultiple(int divisor, int bound) {
+    for(int i = bound; i > 0; i--){
+      if(i % divisor == 0) return i;
+    }
+    return 1;
+  }
 
 
 }
