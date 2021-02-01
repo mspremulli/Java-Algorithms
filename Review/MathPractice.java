@@ -30,5 +30,17 @@ public class MathPractice {
     return 1;
   }
 
+  int circleOfNumbers(int n, int firstNumber) {
+
+    return ((n/2) + firstNumber) % n;
+  }
+
+  int lateRide(int n) {
+    int hours = n / 60;
+    int minutes = n % 60;
+
+    return hours / 10 + hours % 10 + minutes / 10 + minutes % 10;
+  }
+
 
 }
