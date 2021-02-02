@@ -42,5 +42,21 @@ public class MathPractice {
     return hours / 10 + hours % 10 + minutes / 10 + minutes % 10;
   }
 
+  int phoneCall(int min1, int min2_10, int min11, int s) {
+    if(min1 > s) return 0;
+    s = s - min1;
+    for(int i = 1; i< 10; i++){
+      s = s - min2_10;
+      if(s < 0) return i;
+    }
+
+    return 10 + s / min11;
+  }
+
+  boolean reachNextLevel(int experience, int threshold, int reward) {
+    return experience + reward >= threshold;
+  }
+
+
 
 }
